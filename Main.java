@@ -29,11 +29,14 @@ class Main {
                 System.out.println("Błędna data urodzenia studenta!");
             }catch(WrongAge e) {
                 System.out.println("Błędny wiek studenta!");
+            }catch (java.util.InputMismatchException e){
+                System.out.println("menu przyjmije dane tylko w postaci liczbowej w zakresie od 0 do 3");
+                scan.nextLine();
             }
         }
     }
 
-    public static int menu() {
+    public static int menu() throws java.util.InputMismatchException {
         System.out.println("Wciśnij:");
         System.out.println("1 - aby dodać studenta");
         System.out.println("2 - aby wypisać wszystkich studentów");
