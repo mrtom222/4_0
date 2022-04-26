@@ -24,7 +24,13 @@ public class Service1 {
             line = reader.readLine();
             if(line == null)
                 break;
-            ret.add(Student.Parse(line));
+            try{
+              ret.add(Student.Parse(line));
+            }
+            catch (StudentParseError e){
+              System.out.print("błond odczytu w lini: ");
+              System.out.println(line);
+            }
         }
         reader.close();
         return ret;
